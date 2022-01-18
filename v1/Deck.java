@@ -20,13 +20,15 @@ public class Deck {
     }
   }
 
-  public void shuffle() {
-
+  public ArrayList<Card> shuffle(ArrayList<Card>) {
+    // takes AL of Cards and shuffles and returns it
   }
 
   public Card draw() {
 
   }
 
-  public
+  public void recycle() {
+    // take the playing pile(so make sure players hands are omitted) and shuffle it
+  }
 }
