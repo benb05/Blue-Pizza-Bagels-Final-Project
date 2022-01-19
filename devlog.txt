@@ -73,3 +73,13 @@ Andrew & Kosta :: Drafted proposal & plan.
 Kosta :: Transcribed paper proposal into digitalized copy.
 ==============================================================
 
+2022-01-18
+--------------------------------------------------------------
+Andrew :: Started working on class Card, added all attributes and constructors. Also completed toString method.
+          However, need to set number correctly (go from 2-15 range, to 1-10 and jack-ace range)
+          Also add helper method to assign function to appropriate cards.
+Andrew :: Completed class Card. Only available methods and accessors: toString(), changeWhere(int location), getWhere(), getSuit(), and getNum()
+          Also there are two constructors: Default - Card() and Card(String suit, int number)
+==============================================================
+
+
