@@ -7,8 +7,8 @@ public class Deck {
       - deck attribute :: array of Card items, initialized as 52 cards
       + shuffle method :: shuffles the deck(should be called at initialization & to reshuffle)
   */
-  private ArrayList<Card> deck = new ArrayList<Card>(52);
-  private ArrayList<Card> discard = new ArrayList<Card>(52);
+  public ArrayList<Card> deck = new ArrayList<Card>(52);
+  public ArrayList<Card> discard = new ArrayList<Card>(52);
 
   public Deck() {
     String[] suits = new String[]{"spades", "hearts", "clubs", "diamonds"};
@@ -42,5 +42,14 @@ public class Deck {
     // take the playing pile(so make sure players' hands are omitted) and shuffle it
     deck = this.shuffle(discard);
     discard.clear();
+  }
+
+  public void main(String[] args) {
+    System.out.println(deck.toString());
+    Card c = draw();
+    System.out.println(c.toString());
+    System.out.println(deck.toString());
+    shuffle(deck);
+    System.out.println(deck.toString());
   }
 }
