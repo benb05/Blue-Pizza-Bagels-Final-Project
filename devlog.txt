@@ -86,7 +86,7 @@ Andrew :: Completed class Card. Only available methods and accessors: toString()
 2022-01-19
 --------------------------------------------------------------
 Andrew :: Tested and fixed class Deck 
-Ben ::
+Ben :: Created a tester file in order to test functionality of all other classes in project.
 ==============================================================
 
 
