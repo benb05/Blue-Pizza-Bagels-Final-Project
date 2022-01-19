@@ -8,7 +8,7 @@ public class Deck {
       + shuffle method :: shuffles the deck(should be called at initialization & to reshuffle)
   */
   private ArrayList<Card> _deck = new ArrayList<Card>(52);
-  private ArrayList<Card> discard = new ArrayList<Card>(52);
+  private ArrayList<Card> _discard = new ArrayList<Card>(52);
 
   // Default constructor - populate deck with 1-14 number card objects
   public Deck() {
@@ -31,20 +31,21 @@ public class Deck {
     return str + "\n" + Integer.toString(numCards);
   }
 
-  public ArrayList<Card> shuffle(ArrayList<Card> cards) {
+  // Copies _deck into tempDeck var and 
+  public ArrayList<Card> shuffle() {
     // takes AL of Cards and shuffles and returns it as randomly ordered AL of Cards
-    ArrayList<Card> shuffled = new ArrayList<>(cards.size());
-    for(int c = 0; c < cards.size(); c++ ) { // copy input array for shuffling
-      shuffled.set(c, cards.get(c));
+    ArrayList<Card> tempDeck = new ArrayList<Card>();
+    for(Card c : _deck) { // copy input array for shuffling
+      tempDeck.add(c);
     }
-    Collections.shuffle(shuffled); // shuffle copy
-    return shuffled;
+    Collections.shuffle(tempDeck); // shuffle copy
+    return tempDeck;
   }
 
   public Card draw() {
     // gives leftmost card from deck and removes that card from the deck
-    Card c = _deck.get(_deck.size());
-    _deck.set(_deck.size(), null);
+    Card c = _deck.get(_deck.size()-1);
+    _deck.remove(_deck.size()-1);
     return c;
   }
 
