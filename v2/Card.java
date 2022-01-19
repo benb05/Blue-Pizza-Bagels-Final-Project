@@ -8,7 +8,7 @@ public class Card {
      * 
      * Number - all the numbers in a 52 card deck, 2-10, and jack - ace
      * 
-     * Type - comes before number, 2-15 where 11-15 is jack - ace
+     * Type - comes before number, 2-14 where 11-14 is jack - ace
      * 
      * function:
      *  - Two cards are +2
@@ -24,7 +24,7 @@ public class Card {
      */
 
     private String _number,_suit,_function;
-    private int _type,_belongsTo;
+    private int _belongsTo;
 
 
 

@@ -1,4 +1,4 @@
-<Team Name>
+Blue Pizza Bagels
 Andrew Piatetsky
 Ben Belotser
 Kosta Dubovskiy
@@ -80,6 +80,13 @@ Andrew :: Started working on class Card, added all attributes and constructors. 
           Also add helper method to assign function to appropriate cards.
 Andrew :: Completed class Card. Only available methods and accessors: toString(), changeWhere(int location), getWhere(), getSuit(), and getNum()
           Also there are two constructors: Default - Card() and Card(String suit, int number)
+==============================================================
+
+
+2022-01-19
+--------------------------------------------------------------
+Andrew :: Tested and fixed class Deck 
+Ben :: Created a tester file in order to test functionality of all other classes in project.
 ==============================================================
 
 
