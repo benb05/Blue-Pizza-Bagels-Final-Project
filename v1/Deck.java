@@ -7,8 +7,8 @@ public class Deck {
       - deck attribute :: array of Card items, initialized as 52 cards
       + shuffle method :: shuffles the deck(should be called at initialization & to reshuffle)
   */
-  public ArrayList<Card> deck = new ArrayList<Card>(52);
-  public ArrayList<Card> discard = new ArrayList<Card>(52);
+  private ArrayList<Card> deck = new ArrayList<Card>(52);
+  private ArrayList<Card> discard = new ArrayList<Card>(52);
 
   public Deck() {
     String[] suits = new String[]{"spades", "hearts", "clubs", "diamonds"};
@@ -33,23 +33,23 @@ public class Deck {
 
   public Card draw() {
     // gives leftmost card from deck and removes that card from the deck
-    Card c = deck.get(0);
-    deck.set(0, null);
+    Card c = deck.get(deck.size());
+    deck.set(deck.size(), null);
     return c;
   }
 
   public void recycle() {
     // take the playing pile(so make sure players' hands are omitted) and shuffle it
-    deck = this.shuffle(discard);
+    deck = shuffle(discard);
     discard.clear();
   }
 
-  public void main(String[] args) {
+  /* public static void main(String[] args) {
     System.out.println(deck.toString());
     Card c = draw();
     System.out.println(c.toString());
     System.out.println(deck.toString());
     shuffle(deck);
     System.out.println(deck.toString());
-  }
+  } */
 }
