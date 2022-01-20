@@ -24,7 +24,7 @@ public class Card {
      */
 
     private String _number,_suit,_function;
-    private int _type,_belongsTo;
+    private int _belongsTo;
 
 
 

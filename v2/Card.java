@@ -17,7 +17,7 @@ public class Card {
      *  - Jacks are change color
      * 
      * belongsTo:
-     *  - in play pile(-1)
+     *  - in discard pile(-1)
      *  - in deck(0)
      *  - computer hand(1)
      *  - player hand(2)
