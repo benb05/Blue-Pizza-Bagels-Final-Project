@@ -3,7 +3,12 @@ public class Hand {
     public Card play(int ind) {
         return hand.get(ind);
     }
+
     public void set(int ind, Card c) {
         hand.set(ind, c);
+    }
+
+    public int size() {
+        return hand.size();
     }
 }
