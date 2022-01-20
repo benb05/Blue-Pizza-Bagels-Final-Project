@@ -4,19 +4,17 @@ public class Card {
     /**
      * Attributes for the card object:
      * 
-     * Suit - can be one of 4, hearts, spades, clubs, diamonds
+     * String, suit - can be one of 4, hearts, spades, clubs, diamonds
      * 
-     * Number - all the numbers in a 52 card deck, 2-10, and jack - ace
+     * String, number - all the numbers in a 52 card deck, 2-10, and jack - ace
      * 
-     * Type - comes before number, 2-14 where 11-14 is jack - ace
-     * 
-     * function:
+     * String, function:
      *  - Two cards are +2
      *  - Four cards are +4
      *  - Aces are skip turn
      *  - Jacks are change color
      * 
-     * belongsTo:
+     * int, belongsTo:
      *  - in discard pile(-1)
      *  - in deck(0)
      *  - computer hand(1)

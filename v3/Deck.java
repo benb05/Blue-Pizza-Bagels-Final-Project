@@ -6,13 +6,13 @@ public class Deck {
   /**
    * Attributes for class Deck 
    * 
-   * deck - contains 52 cards(13 cards of each suit from 1-10, jack - ace), filled at initialization of deck class
+   * Array List of Cards, deck - contains 52 cards(13 cards of each suit from 1-10, jack - ace), filled at initialization of deck class
    * 
-   * discard - contains all cards that will be discarded during the game
+   * Array List of Cards, discard - contains all cards that will be discarded during the game
    * 
-   * last suit - stores suit information of the last card played
+   * String, last suit - stores suit information of the last card played
    * 
-   * last numb - stores number information of the last card played
+   * String, last numb - stores number information of the last card played
   */
   private ArrayList<Card> _deck = new ArrayList<Card>(52);
   private ArrayList<Card> _discard = new ArrayList<Card>(52);
