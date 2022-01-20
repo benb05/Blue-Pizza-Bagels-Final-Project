@@ -7,5 +7,9 @@
 
 ## Project Description
 
-Our project will be a simplified version of an Uno game that can be played with a 52 card deck.
+Our project will be a card game called Macau, similar to Uno. 
+
+## How to Launch
+
+Compile the Woo file and the game will start.
 
