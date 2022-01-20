@@ -37,11 +37,14 @@ public class Macau {
         return -1;
     }
 
-    public static boolean playable(Card c) {
+    public boolean playable(Card c) {
         /* this should be in the Deck class. 
          * It'll take in the card that a player wishes to play and it will check if that card can
             be played on top of the last card in the discard pile(it would check by using the _lastSuit and _lastNum attributes of our deck)
          */
+        if (c.getNum() > _lastNum || c.getSuit > _lastSuit) {
+            return true;
+        }
         return false;
     }
 
