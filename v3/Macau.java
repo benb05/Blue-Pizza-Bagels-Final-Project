@@ -1,11 +1,14 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Macau {
     private static Deck _deck = new Deck(); 
     private static ArrayList<Hand> _hands = new ArrayList<Hand>(2); 
     private static int turnNumber = 0; // the number of the turn, for 1 player 1 computer then odd turns are player turns evens are computer turns
+    private static int numPlayers;
 
-    public Macau() {
+    public Macau(int numPlayers) {
+        this.numPlayers = numPlayers;
         Hand compHand = new Hand(); // computer hand
         Hand p1Hand = new Hand(); // player 1 hand
         _hands.add(0, p1Hand);
@@ -15,10 +18,6 @@ public class Macau {
             p1Hand.add(i, _deck.draw());
         }
     }
-
-    /* public Macau(int numPlayers) {
-        // for later
-    } */
 
     public Hand getHand(int ind) {
         return _hands.get(ind);
@@ -38,8 +37,23 @@ public class Macau {
         return -1;
     }
 
-    public static String runTurn() {
+    public static boolean playable(Card c) {
+        /* this should be in the Deck class. 
+         * It'll take in the card that a player wishes to play and it will check if that card can
+            be played on top of the last card in the discard pile(it would check by using the _lastSuit and _lastNum attributes of our deck)
+         */
+        return false;
+    }
 
+    public static String runTurn() {
+        Scanner cardScanner = new Scanner(System.in);  // Create a Scanner object
+        String retString = "Player " + (turnNumber % 2) + " please input which card you'd like to play(0-" + (_hands.get(turnNumber).size() - 1) + ")";
+        String cardNum = myObj.nextLine();  // Read user input
+        if(playable(_hands.get(turnNum % numPlayers).get(cardNum))) { // checks if the card is playable
+
+        } else {
+
+        }
     }
 
     public static void main(String[] args) {
