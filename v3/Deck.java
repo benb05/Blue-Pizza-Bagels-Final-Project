@@ -9,9 +9,14 @@ public class Deck {
    * deck - contains 52 cards(13 cards of each suit from 1-10, jack - ace), filled at initialization of deck class
    * 
    * discard - contains all cards that will be discarded during the game
+   * 
+   * last suit - stores suit information of the last card played
+   * 
+   * last numb - stores number information of the last card played
   */
   private ArrayList<Card> _deck = new ArrayList<Card>(52);
   private ArrayList<Card> _discard = new ArrayList<Card>(52);
+  private String _lastSuit, _lastNumb;
 
   /**
    * Default constructor
@@ -126,6 +131,24 @@ public class Deck {
    */
   public boolean deckEmpty() {
     return _deck.size() <= 0;
+  }
+
+  /**
+   * accessor method getLastSuit
+   * @return _lastSuit
+   * returns lastsuit class variable
+   */
+  public String getLastSuit(){
+    return _lastSuit;
+  }
+
+  /**
+   * accessor method getLastNumber
+   * @return _lastNumb
+   * returns lastnumber class var
+   */
+  public String getLastNumber(){
+    return _lastNumb;
   }
 
 
