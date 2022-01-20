@@ -115,7 +115,7 @@ public class Deck {
       _discard.clear();
       return lastPlayed;
     }
-    System.out.println("ERROR - CLASS DECK, LINE 114: deck is not empty, will lose cards in the process");
+    System.out.println("ERROR - CLASS DECK, LINE 118: deck is not empty, will lose cards in the process");
     return null;
   }
 
@@ -134,7 +134,7 @@ public class Deck {
    *  - isShuffled: checks to see if array is shuffled by checking first 13 cards
    *  - getDeckArr: to make accessing _deck easier
    *
-   * */
+   *
   public boolean isShuffled(ArrayList<Card> arr) {
     Card current = arr.get(0);
 
@@ -149,54 +149,47 @@ public class Deck {
 
   public ArrayList<Card> getDeckArr() {
     return _deck;
-  }/**/
+  }*/
 
 
   // main method for internal testing
-   public static void main(String[] args) {
+   public static void main(String[] args) { /*
       Deck d = new Deck();
-      // // System.out.println(d);
-      // d._deck = d.shuffle(d._deck);
+      // System.out.println(d);
+      d._deck = d.shuffle(d._deck);
       // System.out.println(d);
 
-
       Card c = new Card();
-      for (int i = 0; i < 51; i++) {
+      for (int i = 0; i < 52; i++) {
         c = d.draw(-1);
         d.putInDiscard(c);
       }
 
       System.out.println(d);
 
-      d.putInDiscard(c);
-      System.out.println(d._discard);
+      System.out.println(d._discard + " " + d._discard.size());
 
-      d.recycle();
+      System.out.println("d.recycle();: " + d.recycle());
       System.out.println(d);
 
-
-
-
-      // // System.out.println(d.isShuffled(d.getDeckArr()));
-      // // d.isShuffled(d.shuffle(d.getDeckArr()));
-      // // System.out.println(d.isShuffled(d.shuffle(d.getDeckArr())));
-      // // d._deck = d.shuffle(d.getDeckArr());
-      // // System.out.println(d.isShuffled(d.getDeckArr()));
+      System.out.println(d.isShuffled(d.getDeckArr()));
+      d.isShuffled(d.shuffle(d.getDeckArr()));
+      System.out.println(d.isShuffled(d.shuffle(d.getDeckArr())));
+      d._deck = d.shuffle(d.getDeckArr());
+      System.out.println(d.isShuffled(d.getDeckArr()));
       
-      // Card c = new Card();
-      // for (int i = 0; i < 51; i++) {
-      //   c = d.draw(-1);
-      //   d.putInDiscard(c);
-      // }
-      // // System.out.println("d: " + d);
-      // System.out.println(d._discard + " " + d._discard.size());
-      // System.out.println(d.deckEmpty() + " " + (d._deck.size()));
+      Card c = new Card();
+      for (int i = 0; i < 51; i++) {
+        c = d.draw(-1);
+        d.putInDiscard(c);
+      }
+      // System.out.println("d: " + d);
+      System.out.println(d._discard + " " + d._discard.size());
+      System.out.println(d.deckEmpty() + " " + (d._deck.size()));
 
-      // d.recycle();
-      // System.out.println(d.deckEmpty());
-      // System.out.println(d.deckEmpty() + " " + (d._deck.size()));
-      // // System.out.println("d: " + d);
-
-
-  } 
-}
+      d.recycle();
+      System.out.println(d.deckEmpty());
+      System.out.println(d.deckEmpty() + " " + (d._deck.size()));
+      // System.out.println("d: " + d); */
+  } // end main
+} // end class Deck
