@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class Macau {
-    private ArrayList<Hand> hands = new ArrayList<Hand>(2); 
     private Deck _deck = new Deck(); 
+    private ArrayList<Hand> hands = new ArrayList<Hand>(2); 
 
-    public Macau(String[] args) {
+    public Macau() {
         Hand compHand = new Hand(); // computer hand
         Hand p1Hand = new Hand(); // player 1 hand
         hands.set(0, p1Hand);
