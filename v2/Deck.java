@@ -101,16 +101,22 @@ public class Deck {
 
   /**
    * recycle method
+   * @return Card
    * shuffles discard array list and makes that deck
    *  - deck it erased
+   *  - returns the last card played so that game can continue
+   *  - if 
    *  - throws error if deck is not empty
    */
-  public void recycle() {
+  public Card recycle() {
+    Card lastPlayed = _discard.get(_discard.size()-1);
     if (deckEmpty()) {
       _deck = shuffle(_discard);
       _discard.clear();
+      return lastPlayed;
     }
     System.out.println("ERROR - CLASS DECK, LINE 114: deck is not empty, will lose cards in the process");
+    return null;
   }
 
   /**
