@@ -89,6 +89,7 @@ Andrew :: Tested and fixed class Deck
 Ben :: Created a tester file in order to test functionality of all other classes in project.
 Kosta :: Created Macau and Hand class and started working on functionality
 Collective :: Worked on flow chart on Discord together for homework
+To-Do :: Create attributes for current top color and suit in deck that are private but have accessor methods(get/set)
 ==============================================================
 
 
