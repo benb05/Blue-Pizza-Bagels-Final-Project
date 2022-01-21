@@ -97,7 +97,7 @@ To-Do :: Create attributes for current top number and suit in deck that are priv
 Andrew :: Tested and added methods to class Deck and Hand
             - added last cards variables, added playable method to deck class
             - updated methods in hand class
-Ben :: 
+Ben :: Began work on UI, made description for game, updated README
 Kosta :: 
 Collective :: 
 To-Do :: Figure out what to do with skip turn card, because playable deck method doesn't apply
