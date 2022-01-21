@@ -17,9 +17,7 @@ public class Hand {
         for (int i = 0; i < _hand.size(); i++) {
             str += _hand.get(i) + "\n";
         }
-        return str + _hand.size(
-
-        );
+        return str + _hand.size();
     }
 
     /**
