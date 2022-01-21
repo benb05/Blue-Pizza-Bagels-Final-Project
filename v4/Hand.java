@@ -69,6 +69,21 @@ public class Hand {
         return _hand.size() <= 0;
     }
 
+    /**
+     * accessor method for different cards in hand var
+     * throws error and returns null if hand is empty
+     * or index is out of bounds
+     * @param index
+     * @return Card
+     */
+    public Card getCard(int index) {
+        if ((_hand.size() <= 0) || (index > _hand.size())) {
+            System.out.println("ERROR - CLASS HAND, LINE 81 - index out of bounds");
+            return null;
+        }
+        return _hand.get(index);
+    }
+
 
     public static void main(String[] args) { /*
         Hand h = new Hand();

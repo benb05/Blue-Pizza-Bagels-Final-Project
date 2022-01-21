@@ -2,39 +2,62 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Macau {
+    
     private Deck _deck; 
     private ArrayList<Hand> _hands = new ArrayList<Hand>(); 
-    private int turnNumber = 1; // the number of the turn, for 1 player 1 computer then odd turns are player turns evens are computer turns
+    private int _turnNumber = 1; // the number of the turn, for 1 player 1 computer, odd turns are player turns evens are computer turns
 
     public Macau() {
         _deck = new Deck();
         Hand compHand = new Hand(); // computer hand
         Hand p1Hand = new Hand(); // player 1 hand
+
         _hands.add(compHand);
         _hands.add(p1Hand);
+
         for(int i = 0; i < 6; i++) { // populate _hands
             compHand.add(_deck.draw(1));
             p1Hand.add(_deck.draw(2));
         }
     }
 
-    public Hand getHand(int ind) {
-        return _hands.get(ind);
+    public Hand getHand(int index) {
+        return _hands.get(index);
     }
 
+    /**
+     * Checks if any players have empty _hands—aka if anyone has won 
+     * Returns that player's hand index in the array _hands if anyone has won
+     * Returns -1 if no one has won 
+     * @return -1 or index
+     */
     public int gameOver() {
-        /*
-            * Checks if any players have empty _hands—aka if anyone has won 
-            * Returns that player's hand index in the array _hands if anyone has won
-            * Returns -1 if no one has won 
-        */
-        for(int h = 0; h < _hands.size(); h++) {
-            if(_hands.isEmpty()) {
-                return h;
+        Hand hand = new Hand();
+        for(int i = 0; i < _hands.size(); i++) {
+            hand = _hands.get(i);
+            if(hand.isEmpty()) {
+                return i;
             }
         }
         return -1;
     }
+
+    /**
+     * checks to see if there is at least on playable card in a specified hand
+     * @param h
+     * @return boolean
+     */
+    public boolean hasPlayableCard(Hand h) {
+        Card c = new Card();
+        for (int i = 0; i < h.size(); i++) {
+            c = h.getCard(i);
+            if (_deck.playable(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public int runTurn() {
         /* 
@@ -63,3 +86,4 @@ public class Macau {
         System.out.println("Player " + (m.gameOver() + 1) + " has won!");
     }
 }
+
