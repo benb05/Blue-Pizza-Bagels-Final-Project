@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Macau {
     private Deck _deck; 
     private ArrayList<Hand> _hands = new ArrayList<Hand>(); 
-    private int turnNumber = 0; // the number of the turn, for 1 player 1 computer then odd turns are player turns evens are computer turns
+    private int turnNumber = 1; // the number of the turn, for 1 player 1 computer then odd turns are player turns evens are computer turns
 
     public Macau() {
         _deck = new Deck();
@@ -36,16 +36,22 @@ public class Macau {
         return -1;
     }
 
-    public String runTurn() {
+    public int runTurn() {
+        /* 
+            * takes index of chosen card for the active player's hand
+            * if it's playable, play it(remove from their hand, add to top of discard)
+                * return 1 to indicate success
+            * if not, return 0 to indicate failure
+        */
         Hand currHand = _hands.get(turnNumber % 2);
         Scanner sc = new Scanner(System.in);  // Create a Scanner object
         String retString = "Please input which card you'd like to play(0-" + (_hands.get(1).size() - 1) + ")";
         String cardNum = sc.nextLine();  // Read user input
-        turnNumber += 1;
-        if(playable(currHand.get(cardNum))) { // checks if the card is playable
-
+        if(_deck.playable(currHand.get(cardNum))) { // checks if the card is playable
+            _deck.putInDiscard(currHand.play(cardNum)); // play the card chosen
+            return 1;
         } else {
-
+            return 0; // indicate that the card cannot be played
         }
     }
 
@@ -54,6 +60,6 @@ public class Macau {
         while(m.gameOver() == -1) {
             m.runTurn();
         }
-        System.out.println("Player ", (m.gameOver() + 1), " has won!");
+        System.out.println("Player " + (m.gameOver() + 1) + " has won!");
     }
 }
