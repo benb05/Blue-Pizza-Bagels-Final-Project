@@ -92,4 +92,16 @@ Collective :: Worked on flow chart on Discord together for homework
 To-Do :: Create attributes for current top number and suit in deck that are private but have accessor methods(get/set)
 ==============================================================
 
+2022-01-20
+--------------------------------------------------------------
+Andrew :: Tested and added methods to class Deck and Hand
+            - added last cards variables, added playable method to deck class
+            - updated methods in hand class
+Ben :: 
+Kosta :: 
+Collective :: 
+To-Do :: Figure out what to do with skip turn card, because playable deck method doesn't apply
+==============================================================
+
+
 
