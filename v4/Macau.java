@@ -5,13 +5,11 @@ public class Macau {
     private Deck _deck; 
     private ArrayList<Hand> _hands = new ArrayList<Hand>(); 
     private int turnNumber = 0; // the number of the turn, for 1 player 1 computer then odd turns are player turns evens are computer turns
-    private Hand compHand = new Hand(); // computer hand
-    private Hand p1Hand;
 
     public Macau() {
         _deck = new Deck();
-        compHand = new Hand(); // computer hand
-        p1Hand = new Hand(); // player 1 hand
+        Hand compHand = new Hand(); // computer hand
+        Hand p1Hand = new Hand(); // player 1 hand
         _hands.add(compHand);
         _hands.add(p1Hand);
         for(int i = 0; i < 6; i++) { // populate _hands
