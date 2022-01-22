@@ -95,5 +95,23 @@ To-Do :: Figure out what to do with skip turn card, because playable deck method
          Fix class Macau (issues with scanner class, issues with win condition method, etc..)
 ==============================================================
 
+2022-01-21
+--------------------------------------------------------------
+Andrew :: worked on class Macau 
+Ben :: Continued working on the rules and terminal ui
+Kosta :: Worked on class Macau
+Collective :: 
+To-Do :: Write woo while loop and finish class Macau
+==============================================================
+
+
+2022-01-22
+--------------------------------------------------------------
+Andrew :: 
+Ben :: 
+Kosta :: 
+Collective :: 
+To-Do :: Write woo while loop and finish class Macau
+==============================================================
 
 
