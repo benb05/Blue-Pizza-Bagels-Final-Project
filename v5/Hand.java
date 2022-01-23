@@ -15,7 +15,7 @@ public class Hand {
     public String toString() {
         String str = "";
         for (int i = 0; i < _hand.size(); i++) {
-            str += "Card " + i + ": " + _hand.get(i) + "\n";
+            str += "Card " + (i + 1) + ": " + _hand.get(i) + "\n";
         }
         return str + "Total cards: " + _hand.size();
     }
