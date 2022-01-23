@@ -216,7 +216,6 @@ public class Macau {
         return _deck.getLastCard();
     }
 
-<<<<<<< HEAD
     public ArrayList<Card> getDiscard() {
         return _deck.getDeck();
       }
@@ -224,9 +223,6 @@ public class Macau {
     public Deck getDeck() {
     return _deck;
     }
-=======
-    
->>>>>>> b8902dab7a1dd011e8b0131630352d160f76374c
 
 
     public static void main(String[] args) {
