@@ -83,10 +83,12 @@ public class Macau {
         Integer cardNum = Integer.parseInt(sc.nextLine());  // Read user input
         System.out.println("");
         if(_deck.playable(currHand.get(cardNum))) { // checks if the card is playable
+            System.out.println(currHand.play(cardNum));
             _deck.putInDiscard(currHand.play(cardNum)); // play the card chosen
+            _deck.updateLastCard(currHand.play(cardNum));
             return 1;
         } else {
-            return 0; // indicate that the card cannot be played
+            return -1; // indicate that the card cannot be played
         }
     }
 
