@@ -20,24 +20,21 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
+
 ||||||||||||||||||||||||||||||||||||||||||
 
 
@@ -109,9 +106,9 @@ To-Do :: Write woo while loop and finish class Macau
 --------------------------------------------------------------
 Andrew :: 
 Ben :: 
-Kosta :: 
+Kosta :: Worked on fixing errors in Macau, made Macau runTurn() method run without spitting out errors—but still not functioning as intended
 Collective :: 
-To-Do :: Write woo while loop and finish class Macau
+To-Do :: Write woo while loop and finish class Macau, figure out flowchart for turns in our game/UI
 ==============================================================
 
 
