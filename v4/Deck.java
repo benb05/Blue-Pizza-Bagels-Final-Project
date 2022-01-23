@@ -30,6 +30,10 @@ public class Deck {
         _deck.add(temp);
       }
     }
+    _deck = shuffle(_deck);
+    while (getLastCard().getFunct() != null) {
+      _deck = shuffle(_deck);
+    }
   }
 
   /**
@@ -158,6 +162,10 @@ public class Deck {
    */
   public String getLastNumber(){
     return _lastNumb;
+  }
+
+  public Card getLastCard() {
+    return _deck.get(_deck.size() - 1);
   }
 
   /**

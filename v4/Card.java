@@ -127,6 +127,10 @@ public class Card {
         return _number;
     }
 
+    public String getFunct() {
+        return _function;
+    }
+
 
 
     // main method just for internal testing
