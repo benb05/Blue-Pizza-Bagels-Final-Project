@@ -109,6 +109,7 @@ public class Deck {
    * putInDiscard method
    * @param card
    * places specified card in discard pile
+   *  - updates last card variable
    *  - throws error if it is not marked to go to discard pile
    */
   public void putInDiscard(Card card) {
@@ -116,6 +117,7 @@ public class Deck {
       System.out.println("ERROR - CLASS DECK, LINE 112: card that is not marked to go to discard cannot go to discard");
       return;
     }
+    updateLastCard(card);
     _discard.add(card);
   }
 
