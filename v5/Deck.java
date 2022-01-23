@@ -168,7 +168,7 @@ public class Deck {
   }
 
   public Card getLastCard() {
-    return _deck.get(_deck.size() - 1);
+    return _lastCard;
   }
 
   public ArrayList<Card> getDiscard() {

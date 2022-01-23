@@ -33,8 +33,8 @@ public class Woo{
     Card c = new Card();
 
     for (int i = 0; i < 2; i++) {
-      // System.out.println(m.getHand(0));
-      // System.out.println("----------");
+      System.out.println(m.getHand(0));
+      System.out.println("----------");
       // System.out.println(m.getHand(1));
       // System.out.println("----------");
       // System.out.println(m._deck);

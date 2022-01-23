@@ -137,7 +137,7 @@ public class Macau {
         if(_deck.playable(c)) { // double checks if the card is playable
             c.changeWhere(-1); // marks it to be placed in discard
             _deck.putInDiscard(currHand.play(cardIndex)); // play the card chosen and place it in discard
-            updateLastCard(c);
+            updateLastCard(c); // not necessary because automatically done in put in discard method 
             return 1;
         } else {
             return -1; // indicate that the card cannot be played
@@ -157,8 +157,11 @@ public class Macau {
 
         String prompt = "Please input which card you'd like to play (Input '1' if you want to play card 1):\n" + (currHand);
         System.out.println(prompt);
-        int cardIndex = (sc.nextInt() - 1);  // Read user number input
-        // if () {} //checks to see if index is in range
+        int cardIndex = (sc.nextInt() - 1);  // Read user number input , minus 1 because 1st card is 1 (n index card is n+1)
+        if (cardIndex < 0 || cardIndex >= currHand.size() ) { //checks to see if index is in range, if not prompts user again
+            System.out.println("Input out of range of numbers accepted please pick again\n");
+            cardIndex = userInput(currHand); // prompts them again
+        } 
         return cardIndex;
     }
 
@@ -215,13 +218,21 @@ public class Macau {
     public Card getLastCard() {
         return _deck.getLastCard();
     }
-
+    
+    /**
+     * Accessor method for discard pile stored in deck class
+     * @return Array List of Cards
+     */
     public ArrayList<Card> getDiscard() {
         return _deck.getDeck();
-      }
+    }
     
-    public Deck getDeck() {
-    return _deck;
+    /**
+     * Accessor method for deck list stored in deck class
+     * @return Array List of Cards
+     */
+    public ArrayList<Card> getDeck() {
+    return _deck.getDeck();
     }
 
 
