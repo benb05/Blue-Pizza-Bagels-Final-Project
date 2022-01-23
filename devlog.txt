@@ -89,7 +89,7 @@ Andrew :: Tested and added methods to class Deck and Hand
             - added last cards variables, added playable method to deck class
             - updated methods in hand class
 Ben :: Began work on UI, made description for game, updated README
-Kosta :: 
+Kosta :: Began fleshing out Macau, planning out functionality and flowchart
 Collective :: 
 To-Do :: Figure out what to do with skip turn card, because playable deck method doesn't apply
          Fix class Macau (issues with scanner class, issues with win condition method, etc..)
@@ -97,9 +97,9 @@ To-Do :: Figure out what to do with skip turn card, because playable deck method
 
 2022-01-21
 --------------------------------------------------------------
-Andrew :: worked on class Macau 
-Ben :: Continued working on the rules and terminal ui
-Kosta :: Worked on class Macau
+Andrew :: Worked on class Macau, diagnosed errors and reformatted flowchart
+Ben :: Continued working on the rules and terminal UI
+Kosta :: Worked on class Macau, diagnosed errors and reformatted flowchart
 Collective :: 
 To-Do :: Write woo while loop and finish class Macau
 ==============================================================
