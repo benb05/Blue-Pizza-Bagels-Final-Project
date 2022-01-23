@@ -14,20 +14,12 @@ public class Hand {
 
     public String toString() {
         String str = "";
-        for (Integer i = 0; i < _hand.size(); i++) {
-            str += i + " card: " + _hand.get(i) + "\n";
+        for (int i = 0; i < _hand.size(); i++) {
+            str += "Card " + i + ": " + _hand.get(i) + "\n";
         }
         return str + "Total cards: " + _hand.size();
     }
 
-    /**
-     * 
-     * @param index
-     * @return
-     */
-    public Card get(int ind) {
-        return _hand.get(ind);
-    }
 
     /**
      * play method

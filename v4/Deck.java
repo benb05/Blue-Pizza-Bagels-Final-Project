@@ -7,15 +7,13 @@ public class Deck {
    * 
    * Array List of Cards, deck - contains 52 cards(13 cards of each suit from 1-10, jack - ace), filled at initialization of deck class
    * 
-   * Array List of Cards, discard - contains all cards that will be discarded during the game
+   * Array List of Cards, discard - contains all cards that will be discarded during the game (AKA play pile)
    * 
-   * String, last suit - stores suit information of the last card played
-   * 
-   * String, last numb - stores number information of the last card played
+   * Card, lastCard, is the last card played in discard
   */
   private ArrayList<Card> _deck = new ArrayList<Card>(52);
   private ArrayList<Card> _discard = new ArrayList<Card>(52);
-  private String _lastSuit, _lastNumb;
+  private Card _lastCard;
 
   /**
    * Default constructor
@@ -31,7 +29,7 @@ public class Deck {
       }
     }
     _deck = shuffle(_deck);
-    while (getLastCard().getFunct() != null) {
+    while (getLastCard().getFunct() != null) { // shuffles deck so that the first card is not a special card
       _deck = shuffle(_deck);
     }
   }
@@ -59,7 +57,10 @@ public class Deck {
    * Takes a card and determines if it can be played on top of the last card 
    */
   public boolean playable(Card c) {
-    if ( (c.getNum() == _lastNumb) || (c.getSuit() == _lastSuit) ) {
+    String lastNumb = _lastCard.getNum();
+    String lastSuit = _lastCard.getSuit();
+
+    if ( (c.getNum() == lastNumb) || (c.getSuit() == lastSuit) ) {
         return true;
     }
     return false;
@@ -152,7 +153,7 @@ public class Deck {
    * returns lastsuit class variable
    */
   public String getLastSuit(){
-    return _lastSuit;
+    return _lastCard.getSuit();
   }
 
    /**
@@ -161,7 +162,7 @@ public class Deck {
    * returns lastnumber class var
    */
   public String getLastNumber(){
-    return _lastNumb;
+    return _lastCard.getNum();
   }
 
   public Card getLastCard() {
@@ -175,8 +176,7 @@ public class Deck {
    * updates lastnumb and lastsuit var to specified val
    */
   public void updateLastCard(Card c) {
-    _lastNumb = c.getNum();
-    _lastSuit = c.getSuit();
+    _lastCard = c;
   }
 
 
