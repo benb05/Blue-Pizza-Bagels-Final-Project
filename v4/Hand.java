@@ -21,6 +21,15 @@ public class Hand {
     }
 
     /**
+     * 
+     * @param index
+     * @return
+     */
+    public Card get(int ind) {
+        return _hand.get(ind);
+    }
+
+    /**
      * play method
      * @param index
      * @return Card

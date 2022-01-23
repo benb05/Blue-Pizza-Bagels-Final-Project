@@ -74,8 +74,11 @@ public class Macau {
     public int runTurn() {
         Hand currHand = _hands.get(_turnNumber % 2);
         Scanner sc = new Scanner(System.in);  // Create a Scanner object
-        String retString = "Please input which card you'd like to play(0-" + (_hands.get(1)) + ")";
-        String cardNum = sc.nextLine();  // Read user input
+        System.out.println("Here is your current hand: ");
+        System.out.println(currHand);
+        String retString = "Please input which card you'd like to play by it's index(0-" + (currHand.size()) + ")";
+        System.out.println(retString);        
+        Integer cardNum = Integer.parseInt(sc.nextLine());  // Read user input
         if(_deck.playable(currHand.get(cardNum))) { // checks if the card is playable
             _deck.putInDiscard(currHand.play(cardNum)); // play the card chosen
             return 1;
@@ -88,6 +91,9 @@ public class Macau {
         Macau m = new Macau();
         while(m.gameOver() == -1) {
             m.runTurn();
+            if(m.gameOver() != -1) {
+                break;
+            }
         }
         System.out.println("Player " + (m.gameOver() + 1) + " has won!");
     }
