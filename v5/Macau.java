@@ -162,6 +162,34 @@ public class Macau {
         return cardIndex;
     }
 
+
+    /**
+     * The draw sequence when taking a card from the pile and putting it into a hand.
+     * Throws an error if the goWhere is invalid
+     * @param goWhere
+     */
+    public void draw(int turnNum) {
+        int whoseTurn = turnNum % 2; // 0 (when even, computer) or 1 (when odds, player) | 
+        int goWhere = whoseTurn+1; // have to subtract because in range of 1-2, but should be 0-1 (index range)
+        if ((whoseTurn < 0) || (whoseTurn >= (_hands.size()))) {
+            System.out.println("ERROR - CLASS MACAU, LINE 168 - index out of range");
+            return;
+        }
+        Card c = new Card();
+        c = _deck.draw(goWhere);
+        Hand currHand = _hands.get(whoseTurn);
+        currHand.add(c);
+    }
+
+
+    public void play(int turnNum, int cardIndex) {
+        int whoseTurn = turnNum % 2; // 0 (when even, computer) or 1 (when odds, player)
+        Hand currHand = _hands.get(whoseTurn);
+        Card c = currHand.play(cardIndex);
+        c.changeWhere(-1);
+        _deck.putInDiscard(c); // automatically updates last card var
+    }
+
     /**
      * updates last suit and last numb through deck class inside macau object.
      * does not return anything
@@ -178,6 +206,8 @@ public class Macau {
         _turnNumber+=1;
     }
 
+    // ACCESSOR METHODS FOR DECK AND HANDS SO THAT CAN USE IN WOO
+
     /**
      * Accessor method for last card var in class deck inside macau object
      * @return Card
@@ -186,6 +216,7 @@ public class Macau {
         return _deck.getLastCard();
     }
 
+<<<<<<< HEAD
     public ArrayList<Card> getDiscard() {
         return _deck.getDeck();
       }
@@ -193,6 +224,9 @@ public class Macau {
     public Deck getDeck() {
     return _deck;
     }
+=======
+    
+>>>>>>> b8902dab7a1dd011e8b0131630352d160f76374c
 
 
     public static void main(String[] args) {

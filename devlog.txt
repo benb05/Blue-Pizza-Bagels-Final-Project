@@ -112,3 +112,13 @@ To-Do :: Write woo while loop and finish class Macau, figure out flowchart for t
 ==============================================================
 
 
+2022-01-22
+--------------------------------------------------------------
+Andrew :: Finished woo and macau
+Ben :: 
+Kosta :: Worked on fixing errors in Macau, made Macau runTurn() method run without spitting out errors—but still not functioning as intended
+Collective :: 
+To-Do :: Write woo while loop and finish class Macau, figure out flowchart for turns in our game/UI
+==============================================================
+
+
