@@ -105,7 +105,7 @@ public class Macau {
         // no playable card conditions - skip turn and draw
         if (!hasPlayableCard(currHand)) {
             if (whoseTurn == 1) {
-                System.out.println("You don't have any cards to play, your skip a turn and take a card");
+                System.out.println("You don't have any cards to play, you skip a turn and take a card");
                 c = _deck.draw(2);
                 currHand.add(c);
                 return 0;
@@ -127,16 +127,16 @@ public class Macau {
             for (int i = 0; i < currHand.size(); i++) {
                 c = currHand.getCard(i);
                 if (_deck.playable(c)) {
-                    cardIndex = i+1;
+                    cardIndex = i;
                 }
             }
         }
 
-        c = currHand.getCard(cardIndex-1); //-1 because the first card is 1 and the last card is n+1
+        c = currHand.getCard(cardIndex); //-1 because the first card is 1 and the last card is n+1
 
-        if(_deck.playable(c)) { // checks if the card is playable
-            c.changeWhere(-1); // marks it to be places in discard
-            _deck.putInDiscard(currHand.play(cardIndex-1)); // play the card chosen and place it in discard
+        if(_deck.playable(c)) { // double checks if the card is playable
+            c.changeWhere(-1); // marks it to be placed in discard
+            _deck.putInDiscard(currHand.play(cardIndex)); // play the card chosen and place it in discard
             updateLastCard(c);
             return 1;
         } else {
@@ -157,7 +157,7 @@ public class Macau {
 
         String prompt = "Please input which card you'd like to play (Input '1' if you want to play card 1):\n" + (currHand);
         System.out.println(prompt);
-        int cardIndex = (sc.nextInt());  // Read user number input
+        int cardIndex = (sc.nextInt() - 1);  // Read user number input
         // if () {} //checks to see if index is in range
         return cardIndex;
     }
@@ -184,6 +184,14 @@ public class Macau {
      */
     public Card getLastCard() {
         return _deck.getLastCard();
+    }
+
+    public ArrayList<Card> getDiscard() {
+        return _deck.getDeck();
+      }
+    
+    public Deck getDeck() {
+    return _deck;
     }
 
 

@@ -169,6 +169,14 @@ public class Deck {
     return _deck.get(_deck.size() - 1);
   }
 
+  public ArrayList<Card> getDiscard() {
+    return _discard;
+  }
+
+  public ArrayList<Card> getDeck() {
+    return _deck;
+  }
+
   /**
    * method updateLastCard
    * @param c

@@ -44,8 +44,8 @@ public class Woo{
       // System.out.println("-----------------------------------");
 
 
-      c = m._deck.draw(-1);
-      m._deck.putInDiscard(c);
+      c = m.getDeck().draw(-1);
+      m.getDeck().putInDiscard(c);
       m.updateLastCard(c);
 
       // System.out.println("-----------------------------------");
@@ -56,14 +56,14 @@ public class Woo{
       // System.out.println("----------");
       // System.out.println(m._deck);
       // System.out.println("----------");
-      System.out.println((m._deck)._discard);
+      System.out.println((m.getDeck()).getDiscard());
       // System.out.println("----------");
 
       System.out.println("\n");
       System.out.println("-----------------------");
       System.out.println(m.runTurn());
 
-      c = ((m._deck)._discard).get(((m._deck)._discard).size()-1);
+      c = ((m.getDeck()).getDiscard()).get(((m.getDeck()).getDiscard()).size()-1);
       m.updateLastCard(c);
 
       m.addTurn();
@@ -71,7 +71,7 @@ public class Woo{
 
       System.out.println("-----------------------");
       System.out.println("-------------------");
-      System.out.println((m._deck)._discard);
+      System.out.println((m.getDeck()).getDiscard());
       System.out.println("----------");
       System.out.println("-----------------------");
       System.out.println(m.getHand(0));
@@ -80,7 +80,7 @@ public class Woo{
       System.out.println(m.getHand(1));
       System.out.println("-----------------------");
       System.out.println("-----------------------");
-      System.out.println(m._deck + "\n\n\n\n\n");
+      System.out.println(m.getDeck() + "\n\n\n\n\n");
     }
 
 
