@@ -28,10 +28,17 @@ public class Deck {
         _deck.add(temp);
       }
     }
+    
+    // shuffles deck
     _deck = shuffle(_deck);
-    while (getLastCard().getFunct() != null) { // shuffles deck so that the first card is not a special card
+    while ((_deck.get(_deck.size()-1)).getFunct() != null) { // shuffles deck so that the first card is not a special card
       _deck = shuffle(_deck);
     }
+
+    // updates the last card variable so its not null
+    Card c = draw(-1);
+    putInDiscard(c); // automatcially updates var
+    updateLastCard(c);
   }
 
   /**

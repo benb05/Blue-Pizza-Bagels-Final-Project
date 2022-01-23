@@ -105,15 +105,15 @@ public class Macau {
         // no playable card conditions - skip turn and draw
         if (!hasPlayableCard(currHand)) {
             if (whoseTurn == 1) {
-                System.out.println("You don't have any cards to play, you skip a turn and take a card");
                 c = _deck.draw(2);
                 currHand.add(c);
+                System.out.println("You don't have any cards to play, you skip a turn and draw a " + c);
                 return 0;
             }
             if (whoseTurn == 0) {
-                System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a card");
                 c = _deck.draw(1);
                 currHand.add(c);
+                System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a " + c);
                 return 0;
             }
         }
@@ -130,6 +130,7 @@ public class Macau {
                     cardIndex = i;
                 }
             }
+            System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex));
         }
 
         c = currHand.getCard(cardIndex); //-1 because the first card is 1 and the last card is n+1
@@ -140,6 +141,7 @@ public class Macau {
             updateLastCard(c); // not necessary because automatically done in put in discard method 
             return 1;
         } else {
+            System.out.println("You can't place that card on a " + getLastCard() + ". For more information re-read the rules or the readme file on the github page");
             return -1; // indicate that the card cannot be played
         }
     }
@@ -184,8 +186,8 @@ public class Macau {
         currHand.add(c);
     }
 
-
-    public void play(int turnNum, int cardIndex) {
+    // redundant - but keep just in case
+    private void play(int turnNum, int cardIndex) {
         int whoseTurn = turnNum % 2; // 0 (when even, computer) or 1 (when odds, player)
         Hand currHand = _hands.get(whoseTurn);
         Card c = currHand.play(cardIndex);
@@ -224,7 +226,7 @@ public class Macau {
      * @return Array List of Cards
      */
     public ArrayList<Card> getDiscard() {
-        return _deck.getDeck();
+        return _deck.getDiscard();
     }
     
     /**
