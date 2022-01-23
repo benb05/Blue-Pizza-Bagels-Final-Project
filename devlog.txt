@@ -104,7 +104,7 @@ To-Do :: Write woo while loop and finish class Macau
 
 2022-01-22
 --------------------------------------------------------------
-Andrew :: 
+Andrew :: Worked on Woo while loop, did testing and worked on runTurn()
 Ben :: 
 Kosta :: Worked on fixing errors in Macau, made Macau runTurn() method run without spitting out errors—but still not functioning as intended
 Collective :: 
