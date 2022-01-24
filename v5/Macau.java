@@ -6,6 +6,7 @@ public class Macau {
     private Deck _deck; 
     private ArrayList<Hand> _hands = new ArrayList<Hand>(); 
     private int _turnNumber = 1; // the number of the turn, for 1 player 1 computer, odd turns are player turns evens are computer turns
+    private boolean lastWasFunct = false; // remembers if last number was funct or not so no infinite cycle
 
     public Macau() {
         _deck = new Deck();
@@ -81,26 +82,32 @@ public class Macau {
         Hand currHand = _hands.get(whoseTurn); 
 
         // special card functionality
-        c = _deck.getLastCard();
-        if (((c.getFunct()) != null)) {
-            if (c.getFunct().equals("+2")) {
-                takeCardFunctions(2, whoseTurn);
-            }
-            if (c.getFunct().equals("+4")) {
-                takeCardFunctions(4, whoseTurn);
-            }
-            if (c.getFunct().equals("Skip Turn")) {
-                if (whoseTurn == 0) {
+        if (!lastWasFunct) { // checks to see if last number was funct as well
+            c = _deck.getLastCard();
+            if (((c.getFunct()) != null)) {
+                lastWasFunct = true;
+                if (c.getFunct().equals("+2")) {
+                    takeCardFunctions(2, whoseTurn);
                     return;
                 }
-                else if (whoseTurn == 1) {
-                    System.out.println("Your opponent placed an ace so your turn is skipped");
+                if (c.getFunct().equals("+4")) {
+                    takeCardFunctions(4, whoseTurn);
                     return;
-                    
                 }
-
+                if (c.getFunct().equals("Skip Turn")) {
+                    if (whoseTurn == 0) {
+                        System.out.println("Your opponents turn is skipped\n");
+                        return;
+                    }
+                    else if (whoseTurn == 1) {
+                        System.out.println("Your opponent placed an ace so your turn is skipped\n");
+                        return;
+                        
+                    }
+                }
             }
-        }
+        } 
+        lastWasFunct = false;
 
         // no playable card conditions - skip turn and draw
         if (!hasPlayableCard(currHand)) {
@@ -133,7 +140,6 @@ public class Macau {
             System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex) + "\n");
         }
 
-        System.out.println("\n\nget last card: " + _deck.getLastCard() + "\n\n");
         if(_deck.playable(c)) { // double checks if the card is playable
             c.changeWhere(-1); // marks it to be placed in discard
             _deck.putInDiscard(currHand.play(cardIndex)); // play the card chosen and place it in discard
@@ -192,7 +198,7 @@ public class Macau {
         if (lastTurn == 1) {
             System.out.println("Your opponent took " + howMany + " cards\n");
             for (int i = 0; i < howMany; i++) {
-                c = _deck.draw(2);
+                c = _deck.draw(1);
                 takeHand.add(c);
             }
         }
