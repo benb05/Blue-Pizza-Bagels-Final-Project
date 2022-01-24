@@ -33,114 +33,41 @@ public class Woo{
     Card c = new Card();
     System.out.println("\n\n");
 
-    for (int i = 0; i < 3; i++) {
-      System.out.println("-----------------------------------");
-      System.out.println("-----------------------------------");
-      System.out.println("Computer hand: " + m.getHand(0));
-      System.out.println("----------");
-      System.out.println("Player hand: " + m.getHand(1));
-      System.out.println("----------");
-      System.out.println("This is the deck: " + m.getDeck() + "\n" + m.getDeck().size());
-      System.out.println("----------");
-      System.out.println("This is the disacrd: " + m.getDiscard() + "\n" + m.getDiscard().size());
-      System.out.println("-----------------------------------");
-      System.out.println("-----------------------------------");
-
-
-      m.runTurn();
-      m.addTurn();
-
-      
-
-      // // System.out.println("-----------------------------------");
-      // // System.out.println("-----------------------------------");
-      // // System.out.println(m.getHand(0));
-      // // System.out.println("----------");
-      // // System.out.println(m.getHand(1));
-      // // System.out.println("----------");
-      // // System.out.println(m._deck);
-      // // System.out.println("----------");
-      // System.out.println((m.getDeck()).getDiscard());
-      // // System.out.println("----------");
-
-      // System.out.println("\n");
-      // System.out.println("-----------------------");
-      // System.out.println(m.runTurn());
-
-      // c = ((m.getDeck()).getDiscard()).get(((m.getDeck()).getDiscard()).size()-1);
-      // m.updateLastCard(c);
-
-      // m.addTurn();
-
-
-      // System.out.println("-----------------------");
-      // System.out.println("-------------------");
-      // System.out.println((m.getDeck()).getDiscard());
-      // System.out.println("----------");
-      // System.out.println("-----------------------");
-      // System.out.println(m.getHand(0));
-      // System.out.println("----------");
-      // System.out.println("-----------------------");
-      // System.out.println(m.getHand(1));
-      // System.out.println("-----------------------");
-      // System.out.println("-----------------------");
-      // System.out.println(m.getDeck() + "\n\n\n\n\n");
-    }
-
-    System.out.println(m.getHand(0));
-    System.out.println("----------");
-    System.out.println(m.getHand(1));
-    System.out.println("----------");
-    System.out.println(m.getDeck() + " " + m.getDeck().size());
-    System.out.println("----------");
-    System.out.println(m.getDiscard() + " " + m.getDiscard().size());
+    // test forloop
+    // for (int i = 0; i < 3; i++) {
+    //   System.out.println("-----------------------------------");
+    //   System.out.println("-----------------------------------");
+    //   System.out.println("Computer hand: " + m.getHand(0));
+    //   System.out.println("----------");
+    //   System.out.println("Player hand: " + m.getHand(1));
+    //   System.out.println("----------");
+    //   System.out.println("This is the deck: " + m.getDeck() + "\n" + m.getDeck().size());
+    //   System.out.println("----------");
+    //   System.out.println("This is the disacrd: " + m.getDiscard() + "\n" + m.getDiscard().size());
+    //   System.out.println("-----------------------------------");
+    //   System.out.println("-----------------------------------");
+    //   m.runTurn();
+    //   m.addTurn();
+    // }
+    // System.out.println(m.getHand(0));
+    // System.out.println("----------");
+    // System.out.println(m.getHand(1));
+    // System.out.println("----------");
+    // System.out.println(m.getDeck() + " " + m.getDeck().size());
+    // System.out.println("----------");
+    // System.out.println(m.getDiscard() + " " + m.getDiscard().size());
 
 
 
-
-
-
-
-
-
-    /*
     // start of while loop
     while (m.gameOver() == -1) { // checks to see if game is over
 
-      // Card q = new Card("Spades", 3);
-      // m.updateLastCard(q);
-      // System.out.println(m.getLastCard());
-
-      // // running turn
-      // int turnResult = m.runTurn();
-      // while (turnResult == -1) { // checks to see if card can be placed down
-      //   turnResult = m.runTurn();
-      // }
-
-      // // checking to see if special card
-      // Card c = new Card();
-      // if ( turnResult == 2) {
-      //   c = m.getLastCard();
-      //   String funct = c.getFunct();
-      //   if (funct == "+2") {
-      //     System.out.println("+2");
-      //   }
-      //   else if (funct == "+4") {
-      //     System.out.println("+4");
-      //   }
-      //   else if (funct == "Change Color") {
-      //     System.out.println("change color");
-      //   }
-      //   else if (funct == "Skip Turn") {
-      //     System.out.println("skip turn");
-      //   }
-      // } // end special function sorting
-
+      m.runTurn();
+      m.addTurn();
       
-      // System.out.println((m._deck)._discard);
+    } // end game while loop 
 
 
-      
-    } // end game while loop */
+
   } // end main method
 } // end class woo

@@ -111,10 +111,9 @@ Collective ::
 To-Do :: Write woo while loop and finish class Macau, figure out flowchart for turns in our game/UI
 ==============================================================
 
-
-2022-01-22
+2022-01-23
 --------------------------------------------------------------
-Andrew :: Finished woo and macau
+Andrew :: Finished woo and macau. Fixed error in deck where playable was not working (used == instead of .equals() )
 Ben :: 
 Kosta :: Worked on fixing errors in Macau, made Macau runTurn() method run without spitting out errors—but still not functioning as intended
 Collective :: 
@@ -122,11 +121,3 @@ To-Do :: Add special card rules and also upload uml diagram to the repo
 ==============================================================
 
 
-2022-01-23
---------------------------------------------------------------
-Andrew :: 
-Ben :: 
-Kosta :: 
-Collective :: 
-To-Do :: Add special card rules and also upload uml diagram to the repo
-==============================================================

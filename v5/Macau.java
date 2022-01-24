@@ -87,13 +87,13 @@ public class Macau {
             if (whoseTurn == 1) {
                 c = _deck.draw(2);
                 currHand.add(c);
-                System.out.println("You don't have any cards to play, you skip a turn and draw a " + c);
+                System.out.println("You don't have any cards to play, you skip a turn and draw a " + c + "\n");
                 return;
             }
             if (whoseTurn == 0) {
                 c = _deck.draw(1);
                 currHand.add(c);
-                System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a " + c);
+                System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a " + c + "\n");
                 return;
             }
         }
@@ -115,7 +115,6 @@ public class Macau {
 
         c = currHand.getCard(cardIndex); //-1 because the first card is 1 and the last card is n+1
 
-        System.out.println("\n\nget last card: " + _deck.getLastCard() + "\n\n");
         if(_deck.playable(c)) { // double checks if the card is playable
             c.changeWhere(-1); // marks it to be placed in discard
             _deck.putInDiscard(currHand.play(cardIndex)); // play the card chosen and place it in discard
@@ -136,6 +135,7 @@ public class Macau {
         Scanner sc = new Scanner(System.in);  // Create a Scanner object
 
         System.out.println("Here is the top card in deck: " + _deck.getLastCard());
+        System.out.println("Your opponent has " + _hands.get(0).size() + " cards in their hand");
         System.out.println("---------------------");
 
         String prompt = "Please input which card you'd like to play (Input '1' if you want to play card 1):\n" + (currHand) + "\n";
