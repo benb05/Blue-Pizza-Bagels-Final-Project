@@ -16,10 +16,7 @@ public class Woo{
   " • You (The human player... I think) will always have the first turn \n" +
   "\n" +
   "Keybinds:\n" +
-  " • At the start of your turn, your hand will be shown to you, with your cards read in a line. \n" +
-  " • The card that you drew most recently will always be the leftmost card"
-  
-  
+  " • At the start of your turn, your hand will be shown to you, with your cards read in a line. \n"
   ;
 
 
