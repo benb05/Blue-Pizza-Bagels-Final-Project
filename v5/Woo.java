@@ -64,6 +64,13 @@ public class Woo{
       
     } // end game while loop 
 
+    int turnNumb = m.getTurnNum();
+    if ((turnNumb % 2) == 0) { // 0 (when even, computer) or 1 (when odds, player)
+      System.out.println("Congrats you won!!!!!");
+    }
+    else if ((turnNumb % 2) == 1) {
+      System.out.println("Oh so sorry, you lost...");
+    }
 
 
   } // end main method

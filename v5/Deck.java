@@ -231,20 +231,20 @@ public class Deck {
 
   // main method for internal testing
    public static void main(String[] args) {
-      Deck d = new Deck();
+      // Deck d = new Deck();
 
-      Card c = new Card("Spades", 3);
+      // Card c = new Card("Spades", 3);
 
-      c.changeWhere(-1);
-      d.putInDiscard(c);
+      // c.changeWhere(-1);
+      // d.putInDiscard(c);
 
-      Card a = new Card("Spades",5);
-      Card b = new Card("Hearts", 3);
+      // Card a = new Card("Spades",5);
+      // Card b = new Card("Hearts", 3);
 
-      // d.playable(a);
-      System.out.println("suit test: " + d.playable(a));
-      // d.playable(b);
-      System.out.println("number test: " + d.playable(b));
+      // // d.playable(a);
+      // System.out.println("suit test: " + d.playable(a));
+      // // d.playable(b);
+      // System.out.println("number test: " + d.playable(b));
 
 
 

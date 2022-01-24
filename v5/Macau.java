@@ -273,7 +273,11 @@ public class Macau {
      * @return Array List of Cards
      */
     public ArrayList<Card> getDeck() {
-    return _deck.getDeck();
+        return _deck.getDeck();
+    }
+
+    public int getTurnNum() {
+        return _turnNumber;
     }
 
 
