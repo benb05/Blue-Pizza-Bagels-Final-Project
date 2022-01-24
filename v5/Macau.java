@@ -115,7 +115,7 @@ public class Macau {
                 }
             }
             System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex) + "\n");
-            if (currHand.size().equals(0)) {
+            if (currHand.size() == 0) {
                 System.out.println("Your opponent has won. Better luck next time!");
             }
         }
@@ -132,7 +132,7 @@ public class Macau {
             System.out.println("You can't place that card on a " + getLastCard() + ".Please go again. For more information re-read the rules or the readme file on the github page.\n");
             runTurn();
         }
-        if (currHand.size().equals(0)) {
+        if (currHand.size() == 0) {
             System.out.println("You've won!!! Go for another run!");
         }
     }
