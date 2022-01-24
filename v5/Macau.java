@@ -82,11 +82,7 @@ public class Macau {
         int whoseTurn = _turnNumber % 2; // 0 (when even, computer) or 1 (when odds, player)
         Hand currHand = _hands.get(whoseTurn); 
 
-        for (int i = 0; i < currHand.length; i++){
-            if (c.getNum(i) == 2 || c.getNum(i) == 4 || c.getNum(i) == 14 ){
-                return 1;
-            }
-        }
+        if()
 
         // no playable card conditions - skip turn and draw
         if (!hasPlayableCard(currHand)) {
@@ -117,9 +113,6 @@ public class Macau {
                 }
             }
             System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex) + "\n");
-            if (currHand.size().equals(0)) {
-                System.out.println("Your opponent has won. Better luck next time!");
-            }
         }
 
         c = currHand.getCard(cardIndex); //-1 because the first card is 1 and the last card is n+1
@@ -133,9 +126,6 @@ public class Macau {
         } else {
             System.out.println("You can't place that card on a " + getLastCard() + ".Please go again. For more information re-read the rules or the readme file on the github page.\n");
             runTurn();
-        }
-        if (currHand.size().equals(0)) {
-            System.out.println("You've won!!! Go for another run!");
         }
     }
 
