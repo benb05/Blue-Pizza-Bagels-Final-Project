@@ -80,9 +80,11 @@ public class Macau {
         int whoseTurn = _turnNumber % 2; // 0 (when even, computer) or 1 (when odds, player)
         Hand currHand = _hands.get(whoseTurn); 
 
-        for (int i = 0; i < currHand.length; i++){
-            if (c.getNum(i) == 2 || c.getNum(i) == 4 || c.getNum(i) == 14 ){
-                return;
+        // special card functionality
+        c = _deck.getLastCard();
+        if (! ((c.getFunct()) != null)) {
+            if (c.getFunct().equals("+2")) {
+                takeCardFunctions(2, whoseTurn);
             }
         }
 
@@ -115,6 +117,7 @@ public class Macau {
                 }
             }
             System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex) + "\n");
+        }
 
         c = currHand.getCard(cardIndex); //-1 because the first card is 1 and the last card is n+1
 
@@ -128,6 +131,7 @@ public class Macau {
             System.out.println("You can't place that card on a " + getLastCard() + ".Please go again. For more information re-read the rules or the readme file on the github page.\n");
             runTurn();
         }
+    }
 
 
     /**
@@ -148,6 +152,38 @@ public class Macau {
             cardIndex = userInput(currHand); // prompts them again
         } 
         return cardIndex;
+    }
+
+
+    private void takeCardFunctions(int howMany, int whoseTurn) {
+        Hand takeHand = _hands.get(whoseTurn);
+        Card c = new Card();
+
+        int lastTurn = -1; // 0 (when even, computer) or 1 (when odds, player)
+        if (whoseTurn == 0) {
+            lastTurn = 1;
+        }
+        else if (whoseTurn == 1) {
+            lastTurn = 0;
+        }
+
+        String allTaken = "";
+        if (lastTurn == 0) {
+            System.out.println("Since your opponent placed down a +" + howMany + " card, you have to draw " + howMany + " cards\n");
+            for (int i = 0; i < howMany; i++) {
+                c = _deck.draw(2);
+                takeHand.add(c);
+                allTaken += c + "\n";
+            }
+            System.out.println("You took these cards:\n" + allTaken);
+        }
+        if (lastTurn == 1) {
+            System.out.println("Your opponent took " + howMany + " cards\n");
+            for (int i = 0; i < howMany; i++) {
+                c = _deck.draw(2);
+                takeHand.add(c);
+            }
+        }
     }
 
 
