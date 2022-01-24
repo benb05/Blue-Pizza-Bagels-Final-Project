@@ -120,7 +120,7 @@ public class Macau {
             if (whoseTurn == 0) {
                 c = _deck.draw(1);
                 currHand.add(c);
-                System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a " + c);
+                System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a card.");
                 return;
             }
         }
