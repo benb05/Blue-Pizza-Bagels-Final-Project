@@ -140,6 +140,8 @@ public class Macau {
             System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex) + "\n");
         }
 
+        c = currHand.getCard(cardIndex);
+
         if(_deck.playable(c)) { // double checks if the card is playable
             c.changeWhere(-1); // marks it to be placed in discard
             _deck.putInDiscard(currHand.play(cardIndex)); // play the card chosen and place it in discard

@@ -110,6 +110,9 @@ public class Deck {
     if (goWhere == 0) {
       System.out.println("ERROR - CLASS DECK LINE 96: illegal operation, cannot draw card and place it in deck");
     }
+    if (_deck.size() == 0 ) {
+      _lastCard = recycle();
+    }
     Card c = _deck.get(_deck.size()-1);
     _deck.remove(_deck.size()-1);
     c.changeWhere(goWhere);
