@@ -114,13 +114,15 @@ public class Macau {
             if (whoseTurn == 1) {
                 c = _deck.draw(2);
                 currHand.add(c);
-                System.out.println("You don't have any cards to play, you skip a turn and draw a " + c);
+                System.out.println("You don't have any cards to play, you skip a turn and draw a " + c + "\n");
+                lastWasFunct = true;
                 return;
             }
             if (whoseTurn == 0) {
                 c = _deck.draw(1);
                 currHand.add(c);
-                System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a card.");
+                System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a card.\n");
+                lastWasFunct = true;
                 return;
             }
         }
@@ -148,7 +150,7 @@ public class Macau {
             updateLastCard(c); // not necessary because automatically done in put in discard method 
             return;
         } else {
-            System.out.println("You can't place that card on a " + getLastCard() + ".Please go again. For more information re-read the rules or the readme file on the github page.\n");
+            System.out.println("You can't place that card on a " + getLastCard() + ". Please go again. For more information re-read the rules or the readme file on the github page.\n");
             runTurn();
         }
     }
@@ -162,6 +164,7 @@ public class Macau {
         Scanner sc = new Scanner(System.in);  // Create a Scanner object
 
         System.out.println("Here is the top card in deck: " + _deck.getLastCard());
+        System.out.println("Your opponent has " +  (_hands.get(0)).size() + " cards in their hand");
         System.out.println("---------------------");
 
         String prompt = "Please input which card you'd like to play (Input '1' if you want to play card 1):\n" + (currHand) + "\n";
