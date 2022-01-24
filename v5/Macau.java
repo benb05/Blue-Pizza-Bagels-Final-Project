@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.xml.validation.ValidatorHandler;
-
 public class Macau {
     
     private Deck _deck; 
@@ -84,7 +82,7 @@ public class Macau {
 
         for (int i = 0; i < currHand.length; i++){
             if (c.getNum(i) == 2 || c.getNum(i) == 4 || c.getNum(i) == 14 ){
-                return 1;
+                return;
             }
         }
 
