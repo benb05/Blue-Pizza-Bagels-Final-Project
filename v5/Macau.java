@@ -111,6 +111,9 @@ public class Macau {
                 }
             }
             System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex) + "\n");
+            if (currHand.size().equals(0)) {
+                System.out.println("Your opponent has won. Better luck next time!");
+            }
         }
 
         c = currHand.getCard(cardIndex); //-1 because the first card is 1 and the last card is n+1
@@ -123,6 +126,9 @@ public class Macau {
         } else {
             System.out.println("You can't place that card on a " + getLastCard() + ".Please go again. For more information re-read the rules or the readme file on the github page.\n");
             runTurn();
+        }
+        if (currHand.size().equals(0)) {
+            System.out.println("You've won!!! Go for another run!");
         }
     }
 
