@@ -7,7 +7,7 @@
 
 ## Project Description
 
-Our project will be a card game called Macau, similar to Uno. 
+Our project will be a card game called Macau, similar to Uno except it utilizes a standard 52 card deck rather than a special Uno deck of cards. See the rules below and enjoy!
 
 ## How to Launch
 
