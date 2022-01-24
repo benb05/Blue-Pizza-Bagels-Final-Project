@@ -24,13 +24,11 @@ OBSTACLES OVERCOME
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +124,7 @@ To-Do :: Add special card rules and also upload uml diagram to the repo
 --------------------------------------------------------------
 Andrew :: 
 Ben :: 
-Kosta :: 
+Kosta :: Worked on fixing a few errors in Woo/Macau, made UML diagram for classes, & tidied up readme and repo
 Collective :: 
 To-Do :: Add special card rules and also upload uml diagram to the repo
 ==============================================================
