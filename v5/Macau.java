@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.xml.validation.ValidatorHandler;
+
 public class Macau {
     
     private Deck _deck; 
@@ -64,28 +66,6 @@ public class Macau {
         return false;
     }
 
-
-    // public int runTurn() {
-    //     Hand currHand = _hands.get(_turnNumber % 2);
-    //     Scanner sc = new Scanner(System.in);  // Create a Scanner object
-    //     System.out.println("Here is your current hand: ");
-    //     System.out.println(currHand);
-    //     System.out.println("Here is the top card in the deck: ");
-    //     System.out.println(_deck.getLastCard());
-    //     String retString = "Please input which card you'd like to play by it's index(0-" + (currHand.size() - 1) + ")";
-    //     System.out.println(retString);        
-    //     Integer cardNum = Integer.parseInt(sc.nextLine());  // Read user input
-    //     System.out.println("");
-    //     if(_deck.playable(currHand.getCard(cardNum))) { // checks if the card is playable
-    //         System.out.println(currHand.play(cardNum));
-    //         _deck.putInDiscard(currHand.play(cardNum)); // play the card chosen
-    //         _deck.updateLastCard(currHand.play(cardNum));
-    //         return 1;
-    //     } else {
-    //         return -1; // indicate that the card cannot be played
-    //     }
-    // }
-
     /**
      * Simulates a turn in macau
      * takes input of chosen card for the active player's hand
@@ -96,7 +76,7 @@ public class Macau {
      * returns 2 if card chosen has a special function
      * @return -1,0,1,2
      */
-    public int runTurn() {
+    public void runTurn() {
         Card c = new Card();
 
         int whoseTurn = _turnNumber % 2; // 0 (when even, computer) or 1 (when odds, player)
@@ -108,13 +88,13 @@ public class Macau {
                 c = _deck.draw(2);
                 currHand.add(c);
                 System.out.println("You don't have any cards to play, you skip a turn and draw a " + c);
-                return 0;
+                return;
             }
             if (whoseTurn == 0) {
                 c = _deck.draw(1);
                 currHand.add(c);
                 System.out.println("Opponent doesn't have any cards to play, they skip their turn and draw a " + c);
-                return 0;
+                return;
             }
         }
 
@@ -130,19 +110,20 @@ public class Macau {
                     cardIndex = i;
                 }
             }
-            System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex));
+            System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex) + "\n");
         }
 
         c = currHand.getCard(cardIndex); //-1 because the first card is 1 and the last card is n+1
 
+        System.out.println("\n\nget last card: " + _deck.getLastCard() + "\n\n");
         if(_deck.playable(c)) { // double checks if the card is playable
             c.changeWhere(-1); // marks it to be placed in discard
             _deck.putInDiscard(currHand.play(cardIndex)); // play the card chosen and place it in discard
             updateLastCard(c); // not necessary because automatically done in put in discard method 
-            return 1;
+            return;
         } else {
-            System.out.println("You can't place that card on a " + getLastCard() + ". For more information re-read the rules or the readme file on the github page");
-            return -1; // indicate that the card cannot be played
+            System.out.println("You can't place that card on a " + getLastCard() + ".Please go again. For more information re-read the rules or the readme file on the github page.\n");
+            runTurn();
         }
     }
 
@@ -157,7 +138,7 @@ public class Macau {
         System.out.println("Here is the top card in deck: " + _deck.getLastCard());
         System.out.println("---------------------");
 
-        String prompt = "Please input which card you'd like to play (Input '1' if you want to play card 1):\n" + (currHand);
+        String prompt = "Please input which card you'd like to play (Input '1' if you want to play card 1):\n" + (currHand) + "\n";
         System.out.println(prompt);
         int cardIndex = (sc.nextInt() - 1);  // Read user number input , minus 1 because 1st card is 1 (n index card is n+1)
         if (cardIndex < 0 || cardIndex >= currHand.size() ) { //checks to see if index is in range, if not prompts user again

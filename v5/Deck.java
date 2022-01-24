@@ -67,9 +67,13 @@ public class Deck {
     String lastNumb = _lastCard.getNum();
     String lastSuit = _lastCard.getSuit();
 
-    if ( (c.getNum() == lastNumb) || (c.getSuit() == lastSuit) ) {
-        return true;
+    if (c.getSuit().equals(lastSuit)) {
+      return true;
     }
+    if (c.getNum().equals(lastNumb)) {
+      return true;
+    }
+
     return false;
   }
 
@@ -223,58 +227,27 @@ public class Deck {
 
 
   // main method for internal testing
-   public static void main(String[] args) { /*
+   public static void main(String[] args) {
       Deck d = new Deck();
+
+      Card c = new Card("Spades", 3);
+
+      c.changeWhere(-1);
+      d.putInDiscard(c);
+
+      Card a = new Card("Spades",5);
+      Card b = new Card("Hearts", 3);
+
+      // d.playable(a);
+      System.out.println("suit test: " + d.playable(a));
+      // d.playable(b);
+      System.out.println("number test: " + d.playable(b));
+
+
+
+
+
       
-      // System.out.println(d);
-      d._deck = d.shuffle(d._deck);
-      // System.out.println(d);
 
-      Card c = new Card();
-      for (int i = 0; i < 52; i++) {
-        c = d.draw(-1);
-        d.putInDiscard(c);
-      }
-
-      System.out.println(d);
-
-      System.out.println(d._discard + " " + d._discard.size());
-
-      System.out.println("d.recycle();: " + d.recycle());
-      System.out.println(d);
-
-      System.out.println(d.isShuffled(d.getDeckArr()));
-      d.isShuffled(d.shuffle(d.getDeckArr()));
-      System.out.println(d.isShuffled(d.shuffle(d.getDeckArr())));
-      d._deck = d.shuffle(d.getDeckArr());
-      System.out.println(d.isShuffled(d.getDeckArr()));
-      
-      Card c = new Card();
-      for (int i = 0; i < 51; i++) {
-        c = d.draw(-1);
-        d.putInDiscard(c);
-      }
-      // System.out.println("d: " + d);
-      System.out.println(d._discard + " " + d._discard.size());
-      System.out.println(d.deckEmpty() + " " + (d._deck.size()));
-
-      d.recycle();
-      System.out.println(d.deckEmpty());
-      System.out.println(d.deckEmpty() + " " + (d._deck.size()));
-      // System.out.println("d: " + d); 
-      Card c = new Card();
-      for (int i = 0; i < 10; i++) {
-        c = d.draw(-1);
-        d.putInDiscard(c);
-        d.updateLastCard(c);
-      }
-
-      System.out.println(d._discard + " " + d._discard.size());
-      System.out.println(c);
-      System.out.println(d.getLastNumber() + " " + d.getLastSuit());
-
-      c = new Card("Diamonds", 2);
-      System.out.println(d.playable(c));
-      */
   } // end main
 } // end class Deck

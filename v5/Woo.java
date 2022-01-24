@@ -34,18 +34,20 @@ public class Woo{
     System.out.println("\n\n");
 
     for (int i = 0; i < 3; i++) {
-      System.out.println(m.getHand(0));
+      System.out.println("-----------------------------------");
+      System.out.println("-----------------------------------");
+      System.out.println("Computer hand: " + m.getHand(0));
       System.out.println("----------");
-      System.out.println(m.getHand(1));
+      System.out.println("Player hand: " + m.getHand(1));
       System.out.println("----------");
-      System.out.println(m.getDeck() + "\n" + m.getDeck().size());
+      System.out.println("This is the deck: " + m.getDeck() + "\n" + m.getDeck().size());
       System.out.println("----------");
-      System.out.println(m.getDiscard() + "\n" + m.getDiscard().size());
+      System.out.println("This is the disacrd: " + m.getDiscard() + "\n" + m.getDiscard().size());
       System.out.println("-----------------------------------");
       System.out.println("-----------------------------------");
 
 
-      System.out.println(m.runTurn());
+      m.runTurn();
       m.addTurn();
 
       
@@ -89,9 +91,9 @@ public class Woo{
     System.out.println("----------");
     System.out.println(m.getHand(1));
     System.out.println("----------");
-    System.out.println(m.getDeck() + "\n" + m.getDeck().size());
+    System.out.println(m.getDeck() + " " + m.getDeck().size());
     System.out.println("----------");
-    System.out.println(m.getDiscard() + "\n" + m.getDiscard().size());
+    System.out.println(m.getDiscard() + " " + m.getDiscard().size());
 
 
 

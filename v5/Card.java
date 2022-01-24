@@ -50,7 +50,7 @@ public class Card {
 
     /**
      * Constructor Helper methods
-     */
+    */
 
     // type to number, converts 2-14 to 2-10 and jack - king
     // arg cannot be lower than 2 or larger than 14
@@ -71,9 +71,6 @@ public class Card {
     private String assignFunct(int number) {
         if ((number == 4) || (number == 2)) {
             return "+" + Integer.toString(number);
-        }
-        else if (number == 11) {
-            return "Change Color";
         }
         else if (number == 14) {
             return "Skip Turn";
