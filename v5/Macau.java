@@ -86,6 +86,20 @@ public class Macau {
             if (c.getFunct().equals("+2")) {
                 takeCardFunctions(2, whoseTurn);
             }
+            if (c.getFunct().equals("+4")) {
+                takeCardFunctions(4, whoseTurn);
+            }
+            if (c.getFunct().equals("Skip Turn")) {
+                if (whoseTurn == 0) {
+                    return;
+                }
+                else if (whoseTurn == 1) {
+                    System.out.println("Your opponent placed an ace so your turn is skipped");
+                    return;
+                    
+                }
+
+            }
         }
 
         // no playable card conditions - skip turn and draw
