@@ -82,7 +82,7 @@ public class Macau {
 
         // special card functionality
         c = _deck.getLastCard();
-        if (! ((c.getFunct()) != null)) {
+        if (((c.getFunct()) != null)) {
             if (c.getFunct().equals("+2")) {
                 takeCardFunctions(2, whoseTurn);
             }
@@ -118,8 +118,6 @@ public class Macau {
             }
             System.out.println("Your opponent placed down a " + currHand.getCard(cardIndex) + "\n");
         }
-
-        c = currHand.getCard(cardIndex); //-1 because the first card is 1 and the last card is n+1
 
         System.out.println("\n\nget last card: " + _deck.getLastCard() + "\n\n");
         if(_deck.playable(c)) { // double checks if the card is playable
